@@ -1,16 +1,19 @@
 package com.zhukov.demo4.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("sqrt")
-public class MessageSqrtController2 {
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-    @GetMapping()
-    public double convertToSqrt(double x) {
-        return Math.sqrt(x);
+    @RestController
+    public class MessageSqrtController2 {
+    @RequestMapping(value = "/sqrt/{x}", method = GET)
+    public String convertToSqrt1(
+            @PathVariable("x") double x) {
+        return "y= " + Math.sqrt(x);
     }
 
+    @RequestMapping(value = "/sqrt", method = GET)
+    public String convertToSqrt2(double x) {
+        return "y= " + Math.sqrt(x);
+    }
 }
