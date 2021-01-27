@@ -1,6 +1,5 @@
 package com.zhukov.demo4;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -19,6 +18,6 @@ public class Demo4Application {
 			e.printStackTrace();
 		}
 
-		SpringApplication.run(Demo4Application.class, args);
+//		SpringApplication.run(Demo4Application.class, args);
 	}
 }
